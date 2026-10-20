@@ -153,10 +153,11 @@
  	int (*init)(struct subprocess_info *info, struct cred *new);
 --- a/kernel/umh.c
 +++ b/kernel/umh.c
-@@ -28,6 +28,7 @@
+@@ -28,6 +28,8 @@
  #include <linux/uaccess.h>
  #include <linux/initrd.h>
  #include <linux/freezer.h>
++#include <linux/fdtable.h>
 +#include <linux/pipe_fs_i.h>
  
  #include <trace/events/module.h>

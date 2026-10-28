@@ -1,0 +1,12 @@
+diff --git a/net/mac80211/main.c b/net/mac80211/main.c
+index 7c858f1..7f4d40e 100644
+--- a/net/mac80211/main.c
++++ b/net/mac80211/main.c
+@@ -93,6 +93,7 @@ static void ieee80211_reconfig_filter(struct wiphy *wiphy,
+ 	ieee80211_configure_filter(local);
+ }
+ 
++
+ static u32 ieee80211_calc_hw_conf_chan(struct ieee80211_local *local,
+ 				       struct ieee80211_chanctx_conf *ctx)
+ {

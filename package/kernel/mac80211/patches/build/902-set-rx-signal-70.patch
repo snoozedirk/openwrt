@@ -1,0 +1,13 @@
+diff --git a/drivers/net/wireless/virtual/mac80211_hwsim.c b/drivers/net/wireless/virtual/mac80211_hwsim.c
+index e589b7b..7641284 100644
+--- a/drivers/net/wireless/virtual/mac80211_hwsim.c
++++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
+@@ -545,7 +545,7 @@ static const struct ieee80211_rate hwsim_rates[] = {
+ 	{ .bitrate = 540 }
+ };
+ 
+-#define DEFAULT_RX_RSSI -50
++#define DEFAULT_RX_RSSI -70
+ 
+ static const u32 hwsim_ciphers[] = {
+ 	WLAN_CIPHER_SUITE_WEP40,

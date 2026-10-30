@@ -1,0 +1,23 @@
+diff --git a/drivers/net/wireless/virtual/mac80211_hwsim.c b/drivers/net/wireless/virtual/mac80211_hwsim.c
+index 3210b24..e8d8db9 100644
+--- a/drivers/net/wireless/virtual/mac80211_hwsim.c
++++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
+@@ -545,7 +545,7 @@ static const struct ieee80211_rate hwsim_rates[] = {
+ 	{ .bitrate = 540 }
+ };
+ 
+-#define DEFAULT_RX_RSSI -50
++#define DEFAULT_RX_RSSI -70
+ 
+ static const u32 hwsim_ciphers[] = {
+ 	WLAN_CIPHER_SUITE_WEP40,
+@@ -5597,6 +5597,9 @@ static int mac80211_hwsim_new_radio(struct genl_info *info,
+ 	ieee80211_hw_set(hw, SUPPORTS_MULTI_BSSID);
+ 	ieee80211_hw_set(hw, STRICT);
+ 
++	/* TEST(H6)：显式设聚合上限。hwsim 原本一处都没设，mac80211 会兜底 64。 */
++	hw->max_rx_aggregation_subframes = hw->max_tx_aggregation_subframes = 256;
++
+ 	if (param->mlo) {
+ 		hw->wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;
+ 		ieee80211_hw_set(hw, HAS_RATE_CONTROL);

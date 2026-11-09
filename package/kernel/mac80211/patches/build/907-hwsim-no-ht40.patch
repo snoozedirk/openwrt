@@ -1,0 +1,15 @@
+--- a/drivers/net/wireless/virtual/mac80211_hwsim.c
++++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
+@@ -5720,8 +5720,10 @@
+ 
+ 		if (band != NL80211_BAND_6GHZ){
+ 			sband->ht_cap.ht_supported = true;
+-			sband->ht_cap.cap = IEEE80211_HT_CAP_SUP_WIDTH_20_40 |
+-					    IEEE80211_HT_CAP_GRN_FLD |
++			/* TEST(C4)：驱动只报 HT20 —— 去掉 40MHz 能力位，
++			 * iw phy 的 HT20/HT40 与 40MHz chandef 都会立刻变化
++			 */
++			sband->ht_cap.cap = IEEE80211_HT_CAP_GRN_FLD |
+ 					    IEEE80211_HT_CAP_SGI_20 |
+ 					    IEEE80211_HT_CAP_SGI_40 |
+ 					    IEEE80211_HT_CAP_DSSSCCK40;

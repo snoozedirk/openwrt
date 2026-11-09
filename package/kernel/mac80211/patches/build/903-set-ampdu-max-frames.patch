@@ -5,7 +5,7 @@
  	ieee80211_hw_set(hw, STRICT);
  
 +	/* TEST(H6)：显式设聚合上限。hwsim 原本一处都没设，mac80211 会兜底 64。 */
-+	hw->max_rx_aggregation_subframes = hw->max_tx_aggregation_subframes = 256;
++	hw->max_rx_aggregation_subframes = hw->max_tx_aggregation_subframes = 512;
 +
  	if (param->mlo) {
  		hw->wiphy->flags |= WIPHY_FLAG_SUPPORTS_MLO;

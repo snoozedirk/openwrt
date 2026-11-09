@@ -1,0 +1,11 @@
+--- a/net/mac80211/main.c
++++ b/net/mac80211/main.c
+@@ -757,7 +757,7 @@
+ 	.ampdu_params_info = IEEE80211_HT_AMPDU_PARM_FACTOR |
+ 			     IEEE80211_HT_AMPDU_PARM_DENSITY,
+ 
+-	.cap_info = cpu_to_le16(IEEE80211_HT_CAP_SUP_WIDTH_20_40 |
++	.cap_info = cpu_to_le16(/* TEST(C1)：去掉 SUP_WIDTH_20_40，用户态无法再开关 40MHz */
+ 				IEEE80211_HT_CAP_MAX_AMSDU |
+ 				IEEE80211_HT_CAP_SGI_20 |
+ 				IEEE80211_HT_CAP_SGI_40 |

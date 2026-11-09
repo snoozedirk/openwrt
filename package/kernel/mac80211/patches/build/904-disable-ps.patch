@@ -1,0 +1,11 @@
+--- a/drivers/net/wireless/virtual/mac80211_hwsim.c
++++ b/drivers/net/wireless/virtual/mac80211_hwsim.c
+@@ -5591,7 +5591,7 @@
+ 	ieee80211_hw_set(hw, AMPDU_AGGREGATION);
+ 	ieee80211_hw_set(hw, MFP_CAPABLE);
+ 	ieee80211_hw_set(hw, SIGNAL_DBM);
+-	ieee80211_hw_set(hw, SUPPORTS_PS);
++	/* TEST(H2)：去掉 SUPPORTS_PS，对齐行数。 */
+ 	ieee80211_hw_set(hw, REPORTS_TX_ACK_STATUS);
+ 	ieee80211_hw_set(hw, TDLS_WIDER_BW);
+ 	ieee80211_hw_set(hw, SUPPORTS_MULTI_BSSID);

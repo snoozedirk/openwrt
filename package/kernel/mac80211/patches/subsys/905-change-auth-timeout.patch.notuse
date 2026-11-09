@@ -1,0 +1,11 @@
+--- a/net/mac80211/mlme.c
++++ b/net/mac80211/mlme.c
+@@ -33,7 +33,7 @@
+ 
+ #include <kunit/static_stub.h>
+ 
+-#define IEEE80211_AUTH_TIMEOUT		(HZ / 5)
++#define IEEE80211_AUTH_TIMEOUT		(HZ / 1000)
+ #define IEEE80211_AUTH_TIMEOUT_LONG	(HZ / 2)
+ #define IEEE80211_AUTH_TIMEOUT_SHORT	(HZ / 10)
+ #define IEEE80211_AUTH_TIMEOUT_SAE	(HZ * 2)
